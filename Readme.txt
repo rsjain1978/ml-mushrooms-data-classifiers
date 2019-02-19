@@ -1,5 +1,3 @@
-# ml-mushrooms-data-classifiers
-
 #Please refer to the following files:
 
 # TwoLevelDecisionTree.py for solution to Question 1
