@@ -1,7 +1,7 @@
 # ml-mushrooms-data-classifiers
 This project implements KNN & Decision Tree classifiers to learn a dataset of mushroom's charectrestics.
 
-- TwoLevelDecisionTree.py
+- two-level-decision-tree.py
 Python code which builds a two level decision tree using a multi class data set.
 
 - kth-neighbour-classifier.py
