@@ -4,17 +4,20 @@ This project implements KNN & Decision Tree classifiers to learn a dataset of mu
 - TwoLevelDecisionTree.py
 Python code which builds a two level decision tree using a multi class data set.
 
-- KthNeighbourClassifier.py
+- kth-neighbour-classifier.py
 Python code which finds out the best value of K for a given dataset using the KNN classifier. 
 
-- MushroomsDistribution.py 
+- class-distributions.py 
 Python code which prints out the distribution for mushroom classes
 
-- MushroomDecisionTreeClassifier.py 
+- decision-tree-classifier-mushrooms.py 
 Python code which builds a classifier for Mushrooms data using Decision Tree
 
-- MushroomKNNClassifier.py 
+- knn-classifier-mushrooms.py 
 Python code which builds a cClassifier for Mushrooms data using KNN
+
+- performancemetrics.py
+ Pythong utility code to print formatted performance metrics for the passed classifier
 
 # Model Performance Of Decision Tree Classifier
 Accuracy score is 1.0

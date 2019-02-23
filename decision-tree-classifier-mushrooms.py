@@ -1,17 +1,17 @@
 import pandas as pd
 import numpy as np
 
-import PrintClassifierPerformance as pcp
+import performancemetrics as pcp
 
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import KFold
-from sklearn.preprocessing import OneHotEncoder
+from sklearn.tree import DecisionTreeClassifier
 
 def classifyMushroomData(mode):
     #Read the data set
     data = pd.read_csv('mushrooms.csv')
 
-    #check if there are null values present
+    #check if there are null values present in the dataset
     nullValuesPresent = pd.isnull(data).values.any()
     if (nullValuesPresent) :
         print ("There are null values present so need to handle them")
@@ -38,14 +38,9 @@ def classifyMushroomData(mode):
         limit = 6
 
     while (kFolds<limit):
+
         kf = KFold(n_splits=kFolds, shuffle=True, random_state=10)
-
-        sizeOfFeatures = X.shape[1]
-        neighbours = np.round(np.sqrt(sizeOfFeatures))
-        neighbours = int(neighbours)
-        print ('\nNumber of Neighbours to be used in the classifier are ', neighbours)
-
-        classifier = KNeighborsClassifier(n_neighbors=neighbours, weights='uniform')
+        classifier = DecisionTreeClassifier(max_features='auto')
 
         runningModelScore = 0
         for train_index, test_index in kf.split(X):
@@ -61,7 +56,7 @@ def classifyMushroomData(mode):
             predicted_y_with_test_data = predicted_y=classifier.predict(test_x)
 
             if (mode==2 ) :
-                pcp.printKNNClassifierPerformance(classifier, modelScore, test_x, test_y, predicted_y_with_test_data)
+                pcp.printClassifierPerformanceOnTestData(classifier, modelScore, test_x, test_y, predicted_y_with_test_data)
 
             runningModelScore = runningModelScore + modelScore
 
@@ -75,9 +70,10 @@ def classifyMushroomData(mode):
         mapKFoldAndModelScore[kFolds]=averageScore
         kFolds=kFolds+1
         runningModelScore = 0
-    
+
     print ('\nMapping of each k and the corresponding model accuracy score in (kFold, score) format')
     print (mapKFoldAndModelScore)
+
 
 #Display execution options to the user and accept the mode in which the classifier needs to run.
 print ('Please press 1 if you want to find best value of k in cross validation approach')
