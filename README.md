@@ -1,11 +1,20 @@
 # ml-mushrooms-data-classifiers
+This project implements KNN & Decision Tree classifiers to learn a dataset of mushroom's charectrestics.
 
-Please refer to the following files:
-- TwoLevelDecisionTree.py for solution to Question 1
-- KthNeighbourClassifier.py for solution to Question 2
-- MushroomsDistribution.py for solution to Question 3, part 1 - distribution for mushroom classes
-- MushroomDecisionTreeClassifier.py for solution to Question 3 - Classifier for Mushrooms data using Decision Tree
-- MushroomKNNClassifier.py for solution to Question 3 - Classifier for Mushrooms data using KNN
+- TwoLevelDecisionTree.py
+Python code which builds a two level decision tree using a multi class data set.
+
+- KthNeighbourClassifier.py
+Python code which finds out the best value of K for a given dataset using the KNN classifier. 
+
+- MushroomsDistribution.py 
+Python code which prints out the distribution for mushroom classes
+
+- MushroomDecisionTreeClassifier.py 
+Python code which builds a classifier for Mushrooms data using Decision Tree
+
+- MushroomKNNClassifier.py 
+Python code which builds a cClassifier for Mushrooms data using KNN
 
 # Model Performance Of Decision Tree Classifier
 Accuracy score is 1.0
